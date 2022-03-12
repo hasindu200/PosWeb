@@ -1,0 +1,749 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/html">
+<head>
+    <meta charset="UTF-8">
+    <title>Be 3D</title>
+    <meta content="width=device-width, initial-scale=1" name="viewport">
+    <!-- Bootstrap CSS -->
+    <link crossorigin="anonymous" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"
+          integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" rel="stylesheet">
+
+    <link href="style.css" rel="stylesheet">
+
+</head>
+
+<!-- Nav Bar-->
+
+<body style="background-color: darkgreen">
+
+<!--      navigation Bar-->
+
+<nav class="navbar  navbar-expand-lg navbar-light navColor">
+    <div class="container-fluid">
+
+        <a class="navbar-brand fw-bolder text-white brandName" href="#">Be 3D
+        </a>
+        <button aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation"
+                class="navbar-toggler"
+                data-bs-target="#navbarNavAltMarkup" data-bs-toggle="collapse" type="button">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+            <div class="navbar-nav ms-auto text-center">
+                <a aria-current="page" class="nav-link text-white" id="linkHome" href="#">Home</a>
+                <a class="nav-link text-white" id="cusLink" href="#">Customer Manage</a>
+                <a class="nav-link text-white" id="itemLink" href="#">Item Manage</a>
+                <a class="nav-link text-white" id="orderLink" href="#">Order</a>
+
+            </div>
+        </div>
+    </div>
+</nav>
+
+<!--dash board-->
+
+<section class="container-fluid" id="dashBoardPage">
+    <section class="row mt-4">
+        <div class=" col-lg-7 px-0">
+            <div class="slider">
+                <div class="carousel slide" data-bs-ride="carousel" id="carouselExampleIndicators">
+                    <div class="carousel-indicators">
+                        <button aria-current="true" aria-label="Slide 1" class="active"
+                                data-bs-slide-to="0" data-bs-target="#carouselExampleIndicators" type="button"></button>
+                        <button aria-label="Slide 2" data-bs-slide-to="1" data-bs-target="#carouselExampleIndicators"
+                                type="button"></button>
+                        <button aria-label="Slide 3" data-bs-slide-to="2" data-bs-target="#carouselExampleIndicators"
+                                type="button"></button>
+                    </div>
+                    <div class="carousel-inner">
+                        <div class="carousel-item active">
+                            <img alt="..." class="d-block w-100" src="model/assets/18228.jpg">
+                        </div>
+                        <div class="carousel-item">
+                            <img alt="..." class="d-block w-100" src="model/assets/29626.jpg">
+                        </div>
+                        <div class="carousel-item">
+                            <img alt="..." class="d-block w-100" src="model/assets/30445.jpg">
+                        </div>
+                    </div>
+                    <button class="carousel-control-prev" data-bs-slide="prev"
+                            data-bs-target="#carouselExampleIndicators"
+                            type="button">
+                        <span aria-hidden="true" class="carousel-control-prev-icon"></span>
+                        <span class="visually-hidden">Previous</span>
+                    </button>
+                    <button class="carousel-control-next" data-bs-slide="next"
+                            data-bs-target="#carouselExampleIndicators"
+                            type="button">
+                        <span aria-hidden="true" class="carousel-control-next-icon"></span>
+                        <span class="visually-hidden">Next</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="col">
+            <div class="row">
+                <div class="col mt-1">
+                    <div class="dashBoardLeft">
+                        <img class="dashBoardLeft" src="model/assets/tech-support.gif"/>
+                        <h1>Customer</h1>
+                    </div>
+                </div>
+
+
+                <div class="col mb-2 mt-1">
+                    <div class="dashBoardLeft">
+                        <img class="dashBoardLeft" src="model/assets/shopping-bag.gif"/>
+                        <h1>item</h1>
+                    </div>
+
+                </div>
+            </div>
+
+            <div class="row-sm-7">
+                <div class="col">
+
+                    <div class="dashBoardLeft">
+                        <img id="shopping" src="model/assets/shopping-cart.gif"/>
+
+                        <h1>All Orders</h1>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</section>
+
+
+<!--Customer Manage From-->
+
+
+<section class="container-fluid mt-4" id="customerPage">
+
+    <section class="row mt-3 justify-content-around">
+        <h1 class="mb-4 text-white ">Customer Manage</h1>
+        <div class="col-12 col-md-5">
+            <div class="mb-3">
+                <label class="form-label text-white" for="cusID">Customer ID</label>
+                <input class="form-control" id="cusID" placeholder="Customer ID" type="text">
+                <p><small id="error" class="text-danger"></small></p>
+            </div>
+
+            <div class="mb-3">
+                <label class="form-label text-white" for="cusName">Customer Name</label>
+                <input class="form-control" id="cusName" placeholder="Customer Name" type="text">
+                <p><small id="errorName" class="text-danger"></small></p>
+            </div>
+
+            <div class="mb-3">
+                <label class="form-label text-white" for="cusAddress">Customer Address</label>
+                <input class="form-control" id="cusAddress" placeholder="Customer Address" type="text">
+                <p><small id="errorAddress" class="text-danger"></small></p>
+            </div>
+
+            <div class="mb-3">
+                <label class="form-label text-white" for="cusSalary">Customer Salary</label>
+                <input class="form-control" id="cusSalary" placeholder="Customer Salary" type="text">
+                <p><small id="errorSalary" class="text-danger"></small></p>
+            </div>
+        </div>
+
+
+        <div class="col-12 col-md-4">
+            <h1 class="text-white">Customer Manage</h1>
+
+            <div class="mb-3">
+                <label class="form-label text-white" for="srcCusID">Search Customer</label>
+                <input class="form-control" id="srcCusID" placeholder="Customer ID, NIC, Name" type="text">
+            </div>
+
+            <button class="btn btn-primary">Search</button>
+            <button class="btn btn-danger">Delete</button>
+            <button id="btnSaveOrUpdate" class="btn btn-success">Save or update</button>
+            <button id="clearAll" class="btn btn-success">Clear All</button>
+
+        </div>
+
+    </section>
+    <div class="table-responsive  justify-content-center">
+        <section class="row mt-4">
+            <div class="col-12">
+                <table class="table table-dark table-hover">
+                    <thead>
+                    <tr>
+                        <th scope="col">Customer ID</th>
+                        <th scope="col">Customer Name</th>
+                        <th scope="col">Customer Address</th>
+                        <th scope="col">Customer Salary</th>
+                    </tr>
+                    </thead>
+                    <tbody id="customerTable">
+
+
+                    </tbody>
+                </table>
+            </div>
+        </section>
+    </div>
+</section>
+
+<!--item page-->
+
+<section class="container-fluid mt-3" id="itemPage">
+
+    <section class="row mt-3 justify-content-around">
+        <h1 class="mb-4 text-white ">Item Manage</h1>
+        <div class="col-12 col-md-5">
+            <div class="mb-3">
+                <label class="form-label text-white" for="itemCode">Item Code</label>
+                <input class="form-control" id="itemCode" placeholder="Item Code" type="text">
+            </div>
+
+            <div class="mb-3">
+                <label class="form-label text-white" for="itemName">Item Name</label>
+                <input class="form-control" id="itemName" placeholder="Item Name" type="text">
+            </div>
+
+            <div class="mb-3">
+                <label class="form-label text-white" for="itemQty">Item Qty</label>
+                <input class="form-control" id="itemQty" placeholder="Item Qty" type="text">
+            </div>
+
+            <div class="mb-3">
+                <label class="form-label text-white" for="itemPrice">Item Price</label>
+                <input class="form-control" id="itemPrice" placeholder="Item Price" type="text">
+            </div>
+        </div>
+
+
+        <div class="col-12 col-md-4">
+            <h1 class="text-white">Item Manage</h1>
+
+            <div class="mb-3">
+                <label class="form-label text-white" for="srcItemID">Search Item</label>
+                <input class="form-control" id="srcItemID" placeholder="Item Code, Item Name, Item Qty,Item Price"
+                       type="text">
+            </div>
+
+            <button class="btn btn-primary">Search</button>
+            <button class="btn btn-danger">Delete</button>
+            <button class="btn btn-success">Save or update</button>
+            <button class="btn btn-success">Clear All</button>
+
+        </div>
+
+    </section>
+    <div class="table-responsive">
+        <section class="row mt-4">
+            <div class="col-12">
+                <table class="table table-dark table-hover">
+                    <thead>
+                    <tr>
+                        <th scope="col">Item Code</th>
+                        <th scope="col">Item Name</th>
+                        <th scope="col">Item Qty</th>
+                        <th scope="col">Item Price</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr>
+                        <td>10012</td>
+                        <td>Apple</td>
+                        <td>211</td>
+                        <td>100</td>
+                    </tr>
+                    <tr>
+                        <td>10012</td>
+                        <td>Apple</td>
+                        <td>211</td>
+                        <td>100</td>
+                    </tr>
+
+                    </tbody>
+                </table>
+            </div>
+        </section>
+    </div>
+</section>
+
+<!--    Purchase Order-->
+
+<section class="container-fluid" id="orderPage">
+    <div class="container-fluid mt-4">
+
+        <div class="jumbotron pt-4">
+
+            <div class="row">
+                <div class="col-lg-4">
+                    <div class="card">
+                        <h5 class="card-header bg-primary  font-weight-bolder">Invoice Details</h5>
+                        <div class="card-body">
+                            <form>
+                                <div class="row">
+                                    <div class="col-6">
+                                        <div class="form-group">
+                                            <label>Order ID :</label>
+                                            <input class="form-control" id="txtOrderID" type="text">
+                                            <span class="control-error" id="orderId-invalid-error"></span>
+                                        </div>
+                                    </div>
+                                    <div class="col-6">
+                                        <div class="form-group">
+                                            <label>Date :</label>
+                                            <input class="form-control" id="txtDate" type="date">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-6">
+                                        <div class="form-group mt-2">
+                                            <label>Customer :</label>
+                                            <select class="form-control" id="selectCusID">
+
+                                            </select>
+                                            <span class="control-error"
+                                                  id="cus-empty-error"></span>
+                                        </div>
+                                    </div>
+                                    <div class="col-6 mt-4">
+                                        <div class="form-group">
+                                            <label>Customer ID</label>
+                                            <input class="form-control" id="orderCustomerID">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-6 mt-4">
+                                        <div class="form-group">
+                                            <label>Name :</label>
+                                            <input class="form-control" id="orderCustomerName" type="text">
+                                        </div>
+                                    </div>
+                                    <div class="col-6 mt-4">
+                                        <div class="form-group">
+                                            <label>Salary :</label>
+                                            <input class="form-control" id="orderCustomerSalary" type="text">
+                                        </div>
+                                    </div>
+                                    <div class="col-12 mt-4 ">
+                                        <div class="form-group">
+                                            <label>Address :</label>
+                                            <input class="form-control" id="orderCustomerAddress" type="text">
+                                        </div>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-5 mt-lg-0 mt-3 ">
+                    <div class="card">
+                        <div class="card-header bg-primary  font-weight-bolder ">Item Select</div>
+                        <div class="card-body">
+                            <form>
+                                <div class="row">
+                                    <div class="col-6">
+                                        <div class="form-group ">
+                                            <label>Item :</label>
+                                            <select class="form-control" id="selectItemCode"></select>
+                                            <span class="control-error"
+                                                  id="item-empty-error"></span>
+                                        </div>
+                                    </div>
+                                    <div class="col-6 mt-2">
+                                        <div class="form-group">
+                                            <label>Item Code :</label>
+                                            <input class="form-control" id="txtItemCode" type="text">
+                                        </div>
+                                    </div>
+                                    <div class="col-5 mt-2">
+                                        <div class="form-group">
+                                            <label>Item Name :</label>
+                                            <input class="form-control" id="txtItemDescription" type="text">
+                                        </div>
+                                    </div>
+                                    <div class="col-4">
+                                        <div class="form-group mt-2">
+                                            <label class="">Price :</label>
+                                            <input class="form-control" id="txtItemPrice" type="text">
+                                        </div>
+                                    </div>
+                                    <div class="col-3">
+                                        <div class="form-group mt-2">
+                                            <label class="">Qty :</label>
+                                            <input class="form-control" id="txtQTYOnHand" type="text">
+                                        </div>
+                                    </div>
+
+                                    <div class="col-12 mt-4">
+                                        <div class="form-group mb-4">
+                                            <label>Order Quantity :</label>
+                                            <input class="form-control" id="txtQty" min="1" type="number">
+                                            <span class="control-error" id="order-qty-empty-error"></span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-group text-right">
+                                    <button class="btn btn-danger col-12 col-sm-auto mt-1" id="btnAddToTable"
+                                            type="button">
+                                        Add Item
+                                    </button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-3">
+                    <section class="content-box-2 p-4 bg-primary">
+                        <div class="row">
+                            <div class="col-12 text-white">
+                                <div class="row">
+                                    <div class="col-12">
+                                        <span class="text-white" id="total-text mb-3">Total : </span>
+                                        <span id="total mt-2 ">00.0</span> Rs/=
+                                    </div>
+
+                                </div>
+                            </div>
+
+                            <div class="col-12">
+                                <div class="row">
+                                    <div class="col-12 text-white">
+                                        <span id="total-text1 ">SubTotal : </span>
+                                        <span id="subtotal">00.0</span> Rs/=
+
+                                    </div>
+
+
+                                </div>
+
+                            </div>
+
+
+                            <div class="col-10 mt-2 ">
+                                <div class="form-group text-white">
+                                    <label>Cash</label>
+                                    <input class="form-control" id="txtCash" min="0" type="number">
+                                    <span class="control-error"
+                                          id="cash-empty-error"></span>
+                                </div>
+                            </div>
+
+
+                            <div class="col-6 mt-2">
+
+                                <div class="form-group text-white">
+                                    <label>Discount</label>
+                                    <input class="form-control" id="txtDiscount" min="0" type="number">
+                                </div>
+                            </div>
+
+
+                            <div class="col-8 mt-2">
+                                <div class="form-group text-white">
+                                    <label>Balance</label>
+                                    <input class="form-control" id="txtBalance" type="text">
+                                </div>
+                            </div>
+                            <div class="col-6 mt-2 ">
+                                <button class="btn btn-success mt-3" id="btnSubmitOrder" type="button">Purchase</button>
+                            </div>
+                        </div>
+
+                    </section>
+
+
+                </div>
+
+                <div class="table-responsive mt-4">
+                    <section class="row mt-4">
+                        <div class="col-12">
+                            <table class="table table-dark table-hover">
+                                <thead>
+                                <tr>
+                                    <th scope="col">Item Code</th>
+                                    <th scope="col">Item Name</th>
+                                    <th scope="col">Item Qty</th>
+                                    <th scope="col">Item Price</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+
+
+                                </tbody>
+                            </table>
+                        </div>
+                    </section>
+                </div>
+            </div>
+        </div>
+
+
+    </div>
+
+
+</section>
+
+<script src="model/assets/jQuery/jquery-3.6.0.min.js"></script>
+<script crossorigin="anonymous"
+        integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+        src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+<script>
+    $("#dashBoardPage").css("display", "block");
+    $("#itemPage").css("display", "none");
+
+    $("#customerPage").css("display", "none");
+    $("#orderPage").css("display", "none");
+
+
+    $("#linkHome").click(function () {
+
+
+        $("#dashBoardPage").css("display", "block");
+        $("#orderPage").css("display", "none");
+        $("#itemPage").css("display", "none");
+        $("#customerPage").css("display", "none");
+
+
+    });
+
+
+    $("#cusLink").click(function () {
+
+        $("#customerPage").css("display", "block");
+        $("#itemPage").css("display", "none");
+        $("#orderPage").css("display", "none");
+        $("#dashBoardPage").css("display", "none");
+
+
+    });
+
+    $("#itemLink").click(function () {
+        $("#itemPage").css("display", "block");
+        $("#customerPage").css("display", "none");
+
+        $("#orderPage").css("display", "none");
+        $("#dashBoardPage").css("display", "none");
+
+
+    });
+
+
+    $("#orderLink").click(function () {
+
+        $("#orderPage").css("display", "block");
+        $("#itemPage").css("display", "none");
+        $("#customerPage").css("display", "none");
+        $("#dashBoardPage").css("display", "none");
+
+
+    });
+
+    /* Customer page java script*/
+
+    $("#btnSaveOrUpdate").click(function () {
+
+
+
+
+
+
+
+
+
+        /* remove event*/
+        $("#customerTable>tr").off();
+
+
+        let cusId = $("#cusID").val();
+        let cusName = $("#cusName").val();
+        let cusAddress = $("#cusAddress").val();
+        let cusSalary = $("#cusSalary").val();
+
+        console.log(cusId, cusName, cusAddress, cusSalary);
+
+
+        let row = `<tr><td>${cusId}</td><td>${cusName}</td><td>${cusAddress}</td><td>${cusSalary}</td></tr>`;
+        $("#customerTable").append(row);
+
+
+        $("#customerTable>tr").click(function () {
+
+
+            let cusId = $(this).children(":eq(0)").text();
+            let cusName = $(this).children(":eq(1)").text();
+            let cusAddress = $(this).children(":eq(2)").text();
+            let cusSalary = $(this).children(":eq(3)").text();
+
+            console.log(cusId, cusName, cusAddress, cusSalary);
+
+
+            $("#cusID").val(cusId);
+            $("#cusName").val(cusName);
+            $("#cusAddress").val(cusAddress);
+            $("#cusSalary").val(cusSalary);
+
+            $("#btnSaveOrUpdate").attr('disabled', false);
+
+
+                $(this).remove();
+
+
+
+
+
+        });
+
+
+        //double click for remove
+
+
+
+
+    });
+
+
+    /*   validation*/
+    const regExCusId = /^(c00)[0-9]{1,4}$/;
+    const cusNameRegEx = /^[A-z ]{5,20}$/;
+    const cusAddressRegEx = /^[0-9/A-z. ,]{7,}$/;
+    const cusSalaryRegEx = /^[0-9]{1,}[.]?[0-9]{1,2}$/;
+
+
+
+
+    $('#cusID,#cusName,#cusAddress,#cusSalary').on('keydown', function (eventOb) {
+        if (eventOb.key == "Tab") {
+            eventOb.preventDefault(); // stop execution of the button
+        }
+    });
+
+
+    $("#cusID").on('keyup', function (eventOb) {
+        if (eventOb.key == "Enter") {
+            $("#cusName").focus();
+        }
+    });
+
+
+    $("#cusName").on('keyup', function (eventOb) {
+        if (eventOb.key == "Enter") {
+            $("#cusAddress").focus();
+        }
+    });
+
+
+    $("#cusAddress").on('keyup', function (eventOb) {
+        if (eventOb.key == "Enter") {
+            $("#cusSalary").focus();
+        }
+    });
+
+
+    $("#cusID").keyup(function () {
+
+        let testCusId = $("#cusID").val();
+
+        if (regExCusId.test(testCusId)) {
+
+            $("#cusID").css('border', '3px solid yellow');
+            $("#error").text("");
+
+
+        }else{
+
+            $("#cusID").css('border', '3px solid red');
+            $("#error").text("Cus ID is a required field : Pattern C00");
+
+        }
+
+    });
+/*
+    cusNameValidation
+    */
+    $("#cusName").keyup(function (){
+
+       let testCusName =   $("#cusName").val();
+
+        if (cusNameRegEx.test(testCusName)){
+
+            $("#cusName").css('border', '3px solid yellow');
+            $("#errorName").text("");
+            $("#btnSaveOrUpdate").attr('disabled', false);
+
+
+
+        }else{
+
+            $("#cusName").css('border', '2px solid red');
+            $("#errorName").text("Cus Name is a required field : Minimum 7");
+            $("#btnSaveOrUpdate").attr('disabled', true);
+
+        }
+    });
+
+    $("#cusAddress").keyup(function (){
+        let testAddress = $("#cusAddress").val();
+
+        if (cusAddressRegEx.test(testAddress)){
+
+            $("#cusAddress").css('border', '3px solid yellow');
+            $("#errorAddress").text("");
+
+
+
+        }else{
+            $("#cusAddress").css('border', '2px solid red');
+            $("#errorAddress").text("Cus Salary is a required field : Minimum 7");
+            $("#cusAddress").focus();
+
+        }
+    })
+
+
+    $("#cusSalary").keyup(function (){
+        let testSalary = $("#cusSalary").val();
+
+        if (cusSalaryRegEx.test(testSalary)){
+
+            $("#cusSalary").css('border', '3px solid yellow');
+            $("#errorSalary").text("");
+
+        }else{
+            $("#cusSalary").css('border', '2px solid red');
+            $("#errorSalary").text("Cus Salary is a required field : Pattern 100.00 or 100");
+        }
+    })
+
+    function clearAll() {
+        $('#cusID,#cusName,#cusAddress,#cusSalary').val("");
+        $('#cusID,#cusName,#cusAddress,#cusSalary').css('border', '2px solid #ced4da');
+        $("#btnSaveOrUpdate").attr('disabled', true);
+        $("#error,#errorName,#errorSalary,#errorAddress").text("");
+        $('#cusID').focus();
+    }
+
+
+    $("#clearAll").click(function (){
+
+        clearAll();
+
+    });
+
+    $("#btnSaveOrUpdate").click(function (){
+
+        clearAll();
+
+    });
+
+
+
+</script>
+
+</body>
+</html>
