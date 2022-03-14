@@ -4,7 +4,7 @@ $("#itemSaveOrUpdate").attr('disabled', true);
 function loadAllItem() {
     $("#itemTable").empty();
     for (let i in itemDb) {
-        let row = `<tr><td>${itemDb[i].id}</td><td>${itemDb[i].ItemName}</td><td>${itemDb[i].itemAddress}</td><td>${itemDb[i].itemSalary}</td></tr>`;
+        let row = `<tr><td>${itemDb[i].getCode()}</td><td>${itemDb[i].getName()}</td><td>${itemDb[i].getUnitPrice()}</td><td>${itemDb[i].getQty()}</td></tr>`;
         $("#itemTable").append(row);
 
     }
@@ -25,6 +25,7 @@ $("#itemSaveOrUpdate").click(function () {
     console.log(itemId, itemName, itemAddress, itemSalary);
 
 
+/*
 
     let itemObj = {
         id: itemId,
@@ -32,9 +33,11 @@ $("#itemSaveOrUpdate").click(function () {
         itemAddress: itemAddress,
         itemSalary: itemSalary,
     };
-
-    itemDb.push(itemObj);
+*/
     alert("Do you want ad record...")
+
+    var item = new ItemDTO(itemId, itemName, itemAddress, itemSalary);
+    itemDb.push(item);
     loadAllItem();
 
     $("#ItemSearch").click(function () {

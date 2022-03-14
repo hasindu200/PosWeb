@@ -7,7 +7,7 @@ $("#btnSaveOrUpdate").attr('disabled', true);
 function loadAllCustomer() {
     $("#customerTable").empty();
     for (let i in customerDb) {
-        let row = `<tr><td>${customerDb[i].id}</td><td>${customerDb[i].cusName}</td><td>${customerDb[i].cusAddress}</td><td>${customerDb[i].cusSalary}</td></tr>`;
+        let row = `<tr><td>${customerDb[i].getId()}</td><td>${customerDb[i].getName()}</td><td>${customerDb[i].getAddress()}</td><td>${customerDb[i].getSalary()}</td></tr>`;
         $("#customerTable").append(row);
 
     }
@@ -29,14 +29,8 @@ $("#btnSaveOrUpdate").click(function () {
 
     console.log(cusId, cusName, cusAddress, cusSalary);
 
-    let customerObj = {
-        id: cusId,
-        cusName: cusName,
-        cusAddress: cusAddress,
-        cusSalary: cusSalary,
-    };
-
-    customerDb.push(customerObj);
+    var customer = new CustomerDTO(cusId, cusName, cusAddress, cusSalary);
+    customerDb.push(customer);
     loadAllCustomer();
 
 
